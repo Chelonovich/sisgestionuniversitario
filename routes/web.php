@@ -72,7 +72,7 @@ Route::post('/admin/turnos/create', [App\Http\Controllers\TurnoController::class
 Route::get('/admin/turnos/{id}/edit', [App\Http\Controllers\TurnoController::class, 'edit'])->name('admin.turnos.edit')->middleware('auth');
 Route::put('/admin/turnos/{id}', [App\Http\Controllers\TurnoController::class, 'update'])->name('admin.turnos.update')->middleware('auth');
 Route::delete('/admin/turnos/{id}', [App\Http\Controllers\TurnoController::class, 'destroy'])->name('admin.turnos.destroy')->middleware('auth');
-/*
+
 //rutas para paralelos
 Route::get('/admin/paralelos', [App\Http\Controllers\ParaleloController::class, 'index'])->name('admin.paralelos.index')->middleware('auth');
 Route::get('/admin/paralelos/create', [App\Http\Controllers\ParaleloController::class, 'create'])->name('admin.paralelos.create')->middleware('auth');
@@ -88,4 +88,4 @@ Route::post('/admin/periodos/create', [App\Http\Controllers\PeriodoController::c
 Route::get('/admin/periodos/{id}/edit', [App\Http\Controllers\PeriodoController::class, 'edit'])->name('admin.periodos.edit')->middleware('auth');
 Route::put('/admin/periodos/{id}', [App\Http\Controllers\PeriodoController::class, 'update'])->name('admin.periodos.update')->middleware('auth');
 Route::delete('/admin/periodos/{id}', [App\Http\Controllers\PeriodoController::class, 'destroy'])->name('admin.periodos.destroy')->middleware('auth');
-*/
+
