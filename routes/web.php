@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdministrativoController;
+use App\Http\Controllers\RolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -89,3 +91,20 @@ Route::get('/admin/periodos/{id}/edit', [App\Http\Controllers\PeriodoController:
 Route::put('/admin/periodos/{id}', [App\Http\Controllers\PeriodoController::class, 'update'])->name('admin.periodos.update')->middleware('auth');
 Route::delete('/admin/periodos/{id}', [App\Http\Controllers\PeriodoController::class, 'destroy'])->name('admin.periodos.destroy')->middleware('auth');
 
+// Rutas para roles
+Route::get('/admin/roles', [RolController::class, 'index'])->name('admin.roles.index')->middleware('auth');
+Route::get('/admin/roles/create', [RolController::class, 'create'])->name('admin.roles.create')->middleware('auth');
+Route::post('/admin/roles/create', [RolController::class, 'store'])->name('admin.roles.store')->middleware('auth');
+Route::get('/admin/roles/{id}/edit', [RolController::class, 'edit'])->name('admin.roles.edit')->middleware('auth');
+Route::put('/admin/roles/{id}', [RolController::class, 'update'])->name('admin.roles.update')->middleware('auth');
+Route::delete('/admin/roles/{id}', [RolController::class, 'destroy'])->name('admin.roles.destroy')->middleware('auth');
+
+
+// Rutas para administrativos
+Route::get('/admin/administrativos', [AdministrativoController::class, 'index'])->name('admin.administrativos.index')->middleware('auth');
+Route::get('/admin/administrativos/create', [AdministrativoController::class, 'create'])->name('admin.administrativos.create')->middleware('auth');
+Route::post('/admin/administrativos/create', [AdministrativoController::class, 'store'])->name('admin.administrativos.store')->middleware('auth');
+Route::get('/admin/administrativos/{id}', [AdministrativoController::class, 'show'])->name('admin.administrativos.show')->middleware('auth');
+Route::get('/admin/administrativos/{id}/edit', [AdministrativoController::class, 'edit'])->name('admin.administrativos.edit')->middleware('auth');
+Route::put('/admin/administrativos/{id}', [AdministrativoController::class, 'update'])->name('admin.administrativos.update')->middleware('auth');
+Route::delete('/admin/administrativos/{id}', [AdministrativoController::class, 'destroy'])->name('admin.administrativos.destroy')->middleware('auth');
